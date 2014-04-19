@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Andrew Adams]]></title>
-  <link href="http://andrewjadams3.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Updates | Andrew Adams]]></title>
+  <link href="http://andrewjadams3.github.io/blog/categories/updates/atom.xml" rel="self"/>
   <link href="http://andrewjadams3.github.io/"/>
   <updated>2014-04-19T14:40:25-05:00</updated>
   <id>http://andrewjadams3.github.io/</id>
@@ -14,13 +14,10 @@
 
   
   <entry>
-    
     <title type="html"><![CDATA[Comparing frameworks]]></title>
     <link href="http://andrewjadams3.github.io/blog/2014/comparing-frameworks/"/>
-    
     <updated>2014-04-14T23:33:00-05:00</updated>
     <id>http://andrewjadams3.github.io/blog/2014/comparing-frameworks</id>
-    
     <content type="html"><![CDATA[<p>As I&rsquo;ve been working my way through <a title="Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Rails Tutorial</a>, I&rsquo;ve become increasingly aware of just how beneficial taking <a title="CS 253 Web Development" href="https://www.udacity.com/course/cs253" target="_blank">Steve Huffman&rsquo;s web development course</a> back in January really was. While I think the Rails tutorial is great, a lot copying and pasting code is required, followed by a brief overview of what it does. Not to mention, much of the code is heavily abstracted in order to save time.</p>
 
 <p>I now understand why Steve took the approach of teaching web development on a low-level framework: by getting your hands dirty and coding many of the functions that are already built into Rails and other frameworks, you gain a deeper understanding of the intricate connections within a dynamic website. While I am still learning, I find it much easier to understand the parallels between what the tutorial is showing me, and what I have already accomplished.</p>
@@ -32,32 +29,24 @@
 
 <p>Focusing on design aspects will certainly be one of my next big challenges, but I can already see Rails opening up many opportunities to experiment and learn.</p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[New projects on GitHub]]></title>
     <link href="http://andrewjadams3.github.io/blog/2014/new-projects-on-github/"/>
-    
     <updated>2014-03-30T12:37:00-05:00</updated>
     <id>http://andrewjadams3.github.io/blog/2014/new-projects-on-github</id>
-    
     <content type="html"><![CDATA[<p>I&rsquo;ve just added the source code for a couple of projects I completed for Udacity&rsquo;s web development course to my <a title="andrewjadams3 on GitHub" href="https://github.com/andrewjadams3" target="_blank">Github</a>. The first is a <a title="CS 253 Blog" href="https://github.com/andrewjadams3/CS-253-Blog" target="_blank">simple blog</a> with some basic features like user authentication and adding posts (the templates certainly need updating though). The second is a <a title="CS 253 Wiki" href="https://github.com/andrewjadams3/CS-253-Wiki" target="_blank">wiki</a> which is slightly more complex, fleshed out, and user-friendly. Both apps are Python-based and hosted on Google App Engine.</p>
 
 <p>I will be featuring some of my work on the <a title="Projects" href="http://andrewjadams3.github.io/projects" target="_blank">projects page</a> of this site as I continue to develop and learn. I am working through <a title="Michael Hartl's Ruby on Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Ruby on Rails tutorial</a> at the moment, hopefully I&rsquo;ll be able to share my first rails app soon!</p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[The teacher becomes the student]]></title>
     <link href="http://andrewjadams3.github.io/blog/2014/the-teacher-becomes-the-student/"/>
-    
     <updated>2014-03-22T12:28:00-05:00</updated>
     <id>http://andrewjadams3.github.io/blog/2014/the-teacher-becomes-the-student</id>
-    
     <content type="html"><![CDATA[<p>Over the past several months, I have been learning how to code. For some reason, I had always been intimidated by code, and had turned down many opportunities to learn. I had convinced myself that I needed to focus on teaching and music, rather than accept the fact that I was afraid to fail. However, as soon as I took the leap, I was hooked.</p>
 
 <p>At the onset, I adopted the attitude that I would &ldquo;teach myself&rdquo;, and simply absorb new information as I went along. After all, that&rsquo;s how it worked when I was a kid &ndash; building silly websites and copying javascript examples! While this was possible to an extent, I soon discovered that I couldn&rsquo;t do everything alone. The VAST number of people online who are eager to share their knowledge about any given subject is unbelievable. I needed to become a student and allow myself to learn from them.</p>
@@ -71,7 +60,6 @@
 
 <p>Now I&rsquo;m in! In June, I&rsquo;ll be leaving my friends, family, and job in Kansas City to move to Chicago for 9 weeks. I still have no idea if I&rsquo;ll stay, move back, or head somewhere else entirely, but this is a huge step. I&rsquo;ve already begun the transition from Python to Ruby, and am following <a title="DBC Prep Objectives" href="https://gist.github.com/andrewjadams3/9572050#dbc-prep-objectives" target="_blank">this checklist</a> to prepare. I&rsquo;ll be updating this blog (with considerably shorter posts from now on) with projects, discoveries, failures, and successes. I can&rsquo;t wait to find out where these next few months will lead!</p>
 ]]></content>
-    
   </entry>
   
 </feed>

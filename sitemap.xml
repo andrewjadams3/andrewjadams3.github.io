@@ -1,16 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://andrewjadams3.github.io/blog/2014/the-teacher-becomes-the-student/</loc>
+        <lastmod>2014-04-19T14:32:58-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://andrewjadams3.github.io/blog/2014/new-projects-on-github/</loc>
+        <lastmod>2014-04-19T14:34:01-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://andrewjadams3.github.io/blog/2014/comparing-frameworks/</loc>
+        <lastmod>2014-04-19T14:37:16-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://andrewjadams3.github.io/404.html</loc>
         <lastmod>2014-04-19T12:49:11-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewjadams3.github.io/blog/archives/</loc>
-        <lastmod>2014-04-19T12:49:11-05:00</lastmod>
+        <lastmod>2014-04-19T14:37:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewjadams3.github.io/</loc>
-        <lastmod>2014-04-19T12:49:11-05:00</lastmod>
+        <lastmod>2014-04-19T14:37:16-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewjadams3.github.io/robots.txt</loc>
