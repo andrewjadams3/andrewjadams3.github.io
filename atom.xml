@@ -4,7 +4,7 @@
   <title><![CDATA[Andrew Adams]]></title>
   <link href="http://andrewada.ms/atom.xml" rel="self"/>
   <link href="http://andrewada.ms/"/>
-  <updated>2014-04-19T23:23:15-05:00</updated>
+  <updated>2014-04-20T17:09:49-05:00</updated>
   <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    
+    <title type="html"><![CDATA[Blogging with Octopress]]></title>
+    <link href="http://andrewada.ms/blog/2014/blogging-with-octopress/"/>
+    
+    <updated>2014-04-19T23:29:19-05:00</updated>
+    <id>http://andrewada.ms/blog/2014/blogging-with-octopress</id>
+    
+    <content type="html"><![CDATA[
+]]></content>
+    
+  </entry>
   
   <entry>
     
