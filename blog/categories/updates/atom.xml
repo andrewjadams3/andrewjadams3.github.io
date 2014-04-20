@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Updates | Andrew Adams]]></title>
-  <link href="http://andrewjadams3.github.io/blog/categories/updates/atom.xml" rel="self"/>
-  <link href="http://andrewjadams3.github.io/"/>
-  <updated>2014-04-19T21:38:36-05:00</updated>
-  <id>http://andrewjadams3.github.io/</id>
+  <link href="http://andrewada.ms/blog/categories/updates/atom.xml" rel="self"/>
+  <link href="http://andrewada.ms/"/>
+  <updated>2014-04-19T23:23:15-05:00</updated>
+  <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
     
@@ -15,44 +15,41 @@
   
   <entry>
     <title type="html"><![CDATA[Comparing frameworks]]></title>
-    <link href="http://andrewjadams3.github.io/blog/2014/comparing-frameworks/"/>
+    <link href="http://andrewada.ms/blog/2014/comparing-frameworks/"/>
     <updated>2014-04-14T23:33:00-05:00</updated>
-    <id>http://andrewjadams3.github.io/blog/2014/comparing-frameworks</id>
-    <content type="html"><![CDATA[<p>As I&rsquo;ve been working my way through <a title="Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Rails Tutorial</a>, I&rsquo;ve become increasingly aware of just how beneficial taking <a title="CS 253 Web Development" href="https://www.udacity.com/course/cs253" target="_blank">Steve Huffman&rsquo;s web development course</a> back in January really was. While I think the Rails tutorial is great, a lot copying and pasting code is required, followed by a brief overview of what it does. Not to mention, much of the code is heavily abstracted in order to save time.</p>
+    <id>http://andrewada.ms/blog/2014/comparing-frameworks</id>
+    <content type="html"><![CDATA[<p>As I&rsquo;ve been working my way through <a title="Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Rails Tutorial</a>, I&rsquo;ve become increasingly aware of just how beneficial taking <a title="CS 253 Web Development" href="https://www.udacity.com/course/cs253" target="_blank">Steve Huffman&rsquo;s web development course</a> back in January really was. While I think the Rails tutorial is great, a lot copying and pasting code is required, which is followed only by a brief overview of what it does. Not to mention, much of the code is heavily abstracted in order to save time.</p>
 
 <!-- more -->
 
 
 <p>I now understand why Steve took the approach of teaching web development on a low-level framework: by getting your hands dirty and coding many of the functions that are already built into Rails and other frameworks, you gain a deeper understanding of the intricate connections within a dynamic website. While I am still learning, I find it much easier to understand the parallels between what the tutorial is showing me, and what I have already accomplished.</p>
 
-<p>That being said, I am truly enjoying the comparative simplicity of Rails! After Steve repeatedly warned against high-level frameworks, I was a little wary to make a switch. However, <a title="Does Rails and Django abstract away too much for beginners?" href="http://qr.ae/vlN3S" target="_blank">this post on Quora</a> convinced me otherwise. <a id="__w2_eLPo9ze_link" href="http://www.quora.com/Nupul-Kukreja">Nupul Kukreja</a> provides the analogy of building a car:</p>
-
-<blockquote><em>You want something that has already put the major parts of the car together so that you can focus on designing the car itself and not worry about putting the engine, steering wheel, seats etc., all together.</em></blockquote>
-
-
-<p>Focusing on design aspects will certainly be one of my next big challenges, but I can already see Rails opening up many opportunities to experiment and learn.</p>
+<p>That being said, I am truly enjoying the comparative simplicity of Rails! After Steve repeatedly warned against high-level frameworks, I was a little wary to make a switch. However, <a title="Does Rails and Django abstract away too much for beginners?" href="http://qr.ae/vlN3S" target="_blank">this post on Quora</a> convinced me otherwise. <a id="__w2_eLPo9ze_link" href="http://www.quora.com/Nupul-Kukreja">Nupul Kukreja</a> provides the analogy of building a car:
+<blockquote><p>You want something that has already put the major parts of the car together so that you can focus on designing the car itself and not worry about putting the engine, steering wheel, seats etc., all together.</p></blockquote>
+Focusing on design aspects will certainly be one of my next big challenges, but I can already see Rails opening up many opportunities to experiment and learn.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[New projects on GitHub]]></title>
-    <link href="http://andrewjadams3.github.io/blog/2014/new-projects-on-github/"/>
+    <link href="http://andrewada.ms/blog/2014/new-projects-on-github/"/>
     <updated>2014-03-30T12:37:00-05:00</updated>
-    <id>http://andrewjadams3.github.io/blog/2014/new-projects-on-github</id>
+    <id>http://andrewada.ms/blog/2014/new-projects-on-github</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve just added the source code for a couple of projects I completed for Udacity&rsquo;s web development course to my <a title="andrewjadams3 on GitHub" href="https://github.com/andrewjadams3" target="_blank">Github</a>. The first is a <a title="CS 253 Blog" href="https://github.com/andrewjadams3/CS-253-Blog" target="_blank">simple blog</a> with some basic features like user authentication and adding posts (the templates certainly need updating though). The second is a <a title="CS 253 Wiki" href="https://github.com/andrewjadams3/CS-253-Wiki" target="_blank">wiki</a> which is slightly more complex, fleshed out, and user-friendly. Both apps are Python-based and hosted on Google App Engine.</p>
 
-<p>I will be featuring some of my work on the <a title="Projects" href="http://andrewjadams3.github.io/projects" target="_blank">projects page</a> of this site as I continue to develop and learn. I am working through <a title="Michael Hartl's Ruby on Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Ruby on Rails tutorial</a> at the moment, hopefully I&rsquo;ll be able to share my first rails app soon!</p>
+<p>I will be featuring some of my work on the <a title="Projects" href="http://andrewada.ms/projects" target="_blank">projects page</a> of this site as I continue to develop and learn. I am working through <a title="Michael Hartl's Ruby on Rails Tutorial" href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl&rsquo;s Ruby on Rails tutorial</a> at the moment, hopefully I&rsquo;ll be able to share my first rails app soon!</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[The teacher becomes the student]]></title>
-    <link href="http://andrewjadams3.github.io/blog/2014/the-teacher-becomes-the-student/"/>
+    <link href="http://andrewada.ms/blog/2014/the-teacher-becomes-the-student/"/>
     <updated>2014-03-22T12:28:00-05:00</updated>
-    <id>http://andrewjadams3.github.io/blog/2014/the-teacher-becomes-the-student</id>
+    <id>http://andrewada.ms/blog/2014/the-teacher-becomes-the-student</id>
     <content type="html"><![CDATA[<p>Over the past several months, I have been learning how to code. For some reason, I had always been intimidated by code, and had turned down many opportunities to learn. I had convinced myself that I needed to focus on teaching and music, rather than accept the fact that I was afraid to fail. However, as soon as I took the leap, I was hooked.</p>
 
-<p>At the onset, I adopted the attitude that I would &ldquo;teach myself&rdquo;, and simply absorb new information as I went along. After all, that&rsquo;s how it worked when I was a kid &ndash; building silly websites and copying javascript examples! While this was possible to an extent, I soon discovered that I couldn&rsquo;t do everything alone. The VAST number of people online who are eager to share their knowledge about any given subject is unbelievable. I needed to become a student and allow myself to learn from them.</p>
+<p>At the onset, I adopted the attitude that I would &ldquo;teach myself&rdquo;, and simply absorb new information as I went along. After all, that&rsquo;s how it worked when I was a kid &ndash; building silly websites and copying javascript examples! While this was possible to an extent, I soon discovered that I couldn&rsquo;t do everything alone. The number of people online who are eager to share their knowledge about any given subject is unbelievable. I needed to become a student and allow myself to learn from them.</p>
 
 <!-- more -->
 
