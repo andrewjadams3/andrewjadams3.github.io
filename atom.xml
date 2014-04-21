@@ -4,7 +4,7 @@
   <title><![CDATA[Andrew Adams]]></title>
   <link href="http://andrewada.ms/atom.xml" rel="self"/>
   <link href="http://andrewada.ms/"/>
-  <updated>2014-04-20T17:09:49-05:00</updated>
+  <updated>2014-04-20T18:59:56-05:00</updated>
   <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
@@ -21,7 +21,18 @@
     <updated>2014-04-19T23:29:19-05:00</updated>
     <id>http://andrewada.ms/blog/2014/blogging-with-octopress</id>
     
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>It&rsquo;s been less than a month since I launched this blog, but this weekend I decided it was time for an overhaul. I originally used WordPress so I could have more control over my content, but I ended up feeling uneasy about the whole thing. Most of the theming options were too flashy, and in my opinion, difficult to customize. Writing my posts in a web-based editor turned out to be less than ideal, and I didn&rsquo;t feel like my content was secure unless I made frequent backups. I needed a simpler way to blog that put me in total control. That&rsquo;s when I discovered <a href="http://octopress.org/" title="Octopress">Octopress</a>.</p>
+
+<!--more-->
+
+
+<p>Octopress is a blog framework designed for <a href="https://github.com/jekyll/jekyll" title="Jekyll">Jekyll</a>, a static site generator. Octopress comes with great customizable templates, useful plugins, and is very simple to set up. All posts are written in <a href="http://daringfireball.net/projects/markdown/syntax" title="Markdown">Markdown</a> syntax, and then &ldquo;baked&rdquo; into static HTML when the site is generated. In fact, the entire site is baked before it is deployed, making it extremely lightweight and responsive.</p>
+
+<p>I now have the ability to develop my blog entirely on my personal machine and preview changes through a local server. The best part is that Octopress is compatible with <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a>, therefore allowing me to simply push my content (both the static site and source code) to GitHub to deploy updates. How cool is that?</p>
+
+<p>Octopress bills itself as &ldquo;A Blogging Framework for Hackers.&rdquo; As such, it ships with several plugins for sharing code snippets and embedding files. I&rsquo;m excited to start sharing my work on this blog as I start digging deeper into web development, and these plugins are going to make it a whole lot easier.</p>
+
+<p>Making the switch was quite easy (and not just because I&rsquo;ve only published a handful of posts). There are many tools available to help convert WordPress or HTML content to Markdown. Just search around, you should be able to find one that works for you. If you&rsquo;re unhappy with your current blog, or are considering starting a new one, I highly recommend you take a look at <a href="http://octopress.org/" title="Octopress">Octopress</a>.</p>
 ]]></content>
     
   </entry>
