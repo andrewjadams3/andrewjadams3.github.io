@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://andrewada.ms/blog/2014/the-teacher-becomes-the-student/</loc>
-        <lastmod>2014-04-19T23:18:00-05:00</lastmod>
+        <lastmod>2014-04-29T22:04:12-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewada.ms/blog/2014/new-projects-on-github/</loc>
@@ -17,6 +17,10 @@
         <lastmod>2014-04-20T18:58:57-05:00</lastmod>
     </url>
     <url>
+        <loc>http://andrewada.ms/blog/2014/first-week-of-dbc/</loc>
+        <lastmod>2014-04-29T22:32:00-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://andrewada.ms/404.html</loc>
         <lastmod>2014-04-26T17:39:56-05:00</lastmod>
     </url>
@@ -26,11 +30,11 @@
     </url>
     <url>
         <loc>http://andrewada.ms/blog/archives/</loc>
-        <lastmod>2014-04-20T18:58:57-05:00</lastmod>
+        <lastmod>2014-04-29T22:32:00-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewada.ms/</loc>
-        <lastmod>2014-04-20T18:58:57-05:00</lastmod>
+        <lastmod>2014-04-29T22:32:00-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewada.ms/projects/</loc>

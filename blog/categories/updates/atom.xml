@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Updates | Andrew Adams]]></title>
   <link href="http://andrewada.ms/blog/categories/updates/atom.xml" rel="self"/>
   <link href="http://andrewada.ms/"/>
-  <updated>2014-04-26T17:40:04-05:00</updated>
+  <updated>2014-04-29T22:32:09-05:00</updated>
   <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[DBC Phase 0: Week 1]]></title>
+    <link href="http://andrewada.ms/blog/2014/first-week-of-dbc/"/>
+    <updated>2014-04-29T22:03:07-05:00</updated>
+    <id>http://andrewada.ms/blog/2014/first-week-of-dbc</id>
+    <content type="html"><![CDATA[<p>Just a few days ago, I completed my first week of Phase 0 in preparation for attending Dev Bootcamp. I would have written this blog post sooner, but to be honest, I needed a break from writing. I&rsquo;ve never believed writing to be one of my strong suits, but I created this blog so I could gain experience, and also improve my abilities to communicate my thoughts and feelings. As it turns out, the challenges for Phase 0 in DBC are requiring me to do just that! For every coding objective I complete, I have been spending just as much time (if not more) reflecting on what I learned/how I felt. It&rsquo;s a requirement, and I&rsquo;ll admit, it&rsquo;s a bit tedious. I&rsquo;ve been finding myself completing an objective in a timely manner, and immediately wasting an hour or two browsing Reddit to avoid writing the reflection. <em>But.</em> I can already tell that these reflections are going to make the difference between completing an objective, and actually <em>learning</em> an objective.</p>
+
+<!-- more -->
+
+
+<p>When I first began learning web development on my own, I was a sponge, absorbing any new piece of information that I could find. As I progressed, however, I began to feel a bit overwhelmed by the enormous amount of resources, documentation, and tutorials available online. It became difficult to differentiate between what was useful and what was superfluous. This was part of the reason I enrolled in DBC; I needed some guidance and direction from those who truly know the difference. Part of the issue, though, was that the more I read, the more I started to skim and skip through sections of material. The satisfaction of completing a chapter in a book became irrelevant when I realized that I didn&rsquo;t understand what most of it. But this past week, when I was forced to not only practice, but reflect on the material, I found that I once again gained the ability to truly absorb and retain information.</p>
+
+<p>I may not be a fan of putting my thought process into words, but if doing so will help me improve as a developer and a person, I&rsquo;m all for it. <strong>That&rsquo;s</strong> why I&rsquo;m writing this post right now. <strong>That&rsquo;s</strong> why I&rsquo;m headed to DBC. I can&rsquo;t wait for week 2.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Blogging with Octopress]]></title>
