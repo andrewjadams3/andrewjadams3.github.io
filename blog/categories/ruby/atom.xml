@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Andrew Adams]]></title>
   <link href="http://andrewada.ms/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://andrewada.ms/"/>
-  <updated>2014-06-11T20:43:24-05:00</updated>
+  <updated>2014-06-14T20:44:31-05:00</updated>
   <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
@@ -12,6 +12,202 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion]]></title>
+    <link href="http://andrewada.ms/blog/2014/recursion/"/>
+    <updated>2014-06-14T16:22:09-05:00</updated>
+    <id>http://andrewada.ms/blog/2014/recursion</id>
+    <content type="html"><![CDATA[<p>Recursion is a tricky subject. There are hundreds of blog posts strewn across the internet attempting to provide thorough explanations, often accompanied by seemingly simple snippets of code. No matter how elegant these explanations may be, most people find themselves working through example after example before finally (<em>maybe, kind of</em>) starting to get a hold on the subject. I&rsquo;ve decided (against my better judgment) to toss my hat into the ring, and highlight a few examples which helped me initially understand recursion. Hopefully they will help you experience a &lsquo;light bulb moment&rsquo; as they did for me.</p>
+
+<!-- more -->
+
+
+<p>Recursion in programming refers to a function/method which calls itself. It&rsquo;s that simple! Well, simple in theory. In practice, recursive functions can be difficult to design and interpret. In fact, recursive methods are often hard to follow precisely <em>because</em> they are deceptively simple. In just two or three lines, you can write a recursive method which does a whole hell of a lot of work.</p>
+
+<p>Let&rsquo;s first look at how we can write a method which calls itself in Ruby:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts num</span>
+</span><span class='line'><span class="sr">return smaller(num-1)</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">smaller</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="mi">3</span>
+</span><span class='line'><span class="mi">2</span>
+</span><span class='line'><span class="mi">1</span>
+</span><span class='line'><span class="mi">0</span>
+</span><span class='line'><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="n">forever</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In this example, you can see that the <code>smaller</code> method takes a number as an argument, prints that number, and then  returns a call to itself, passing <code>num-1</code> as an argument. In essence, the method is simply counting backwards from the original number.</p>
+
+<p>This is great, we&rsquo;ve already created a recursive method! With one problem, however: it will never end. If you run this method as-is, it will never stop <code>puts</code>ing smaller and smaller numbers. To fix this, we need a base case.</p>
+
+<p>A <strong>base case</strong> prevents a recursive method from calling itself when a certain condition is met. In the case of our <code>smaller</code> method, a logical base case could be when the number 0 is reached, or more specifically, when the number zero is passed as an argument. When this happens, we will simply have the method <code>return</code> rather than call itself again.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts num</span>
+</span><span class='line'><span class="sr">if num == 0</span>
+</span><span class='line'><span class="sr">    return</span>
+</span><span class='line'><span class="sr">else</span>
+</span><span class='line'><span class="sr">    return smaller(num-1)</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">smaller</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="mi">3</span>
+</span><span class='line'><span class="mi">2</span>
+</span><span class='line'><span class="mi">1</span>
+</span><span class='line'><span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Every time the <code>smaller</code> method runs, it calls itself with a smaller number. Eventually, the number 0 will be reached, and the method will end. There are, of course, shorter ways to write the code above, but the if/else statement illustrates very clearly what is happening.</p>
+
+<p>At this point, you may be thinking, &ldquo;hey, that looks just like a loop!&rdquo; And you&rsquo;d be right! Anything that can be written recursively can also be refactored and written as a loop. In fact, depending on the problem being solved, a recursive function can eat up resources exponentially faster than its looped counterpart. However, recursive functions are often more elegant, and in many situations, simpler to implement.</p>
+
+<p>Let&rsquo;s look at one, slightly more complex example:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">array</span><span class="o">=[]</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;if num &amp;lt; 0</span>
+</span><span class='line'><span class="sr">    return array</span>
+</span><span class='line'><span class="sr">else</span>
+</span><span class='line'><span class="sr">    array &amp;lt;&amp;lt; num</span>
+</span><span class='line'><span class="sr">    return smaller_ary(num-1, array)</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Can you tell what this code is doing? And if so, what is the base case? What would happen if we called <code>smaller_ary(3)</code>? Let&rsquo;s find out!</p>
+
+<p>First, let&rsquo;s find our base case:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;if num &amp;lt; 0</span>
+</span><span class='line'><span class="sr">    return array</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When the <code>num</code> argument is less than 0, the <code>array</code> argument will be returned. Although our previous example simply <code>return</code>ed, a base case doesn&rsquo;t necessarily need to return nothing. In fact, a base case is usually going to return <em>something</em>, either directly, or to be handed back to previous recursive calls.</p>
+
+<p>If that was our base case, this would be our recursive call:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;else</span>
+</span><span class='line'><span class="sr">    array &amp;lt;&amp;lt; num</span>
+</span><span class='line'><span class="sr">    return smaller_ary(num-1, array)</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When <code>num</code> is not smaller than zero (for example: 3), that number will first be appended onto the <code>array</code> argument. <em>(You may have noticed that when this method is called with only a number as an argument, the <code>array</code> argument will default to an empty array.)</em> Next, a call to <code>smaller_ary</code> will be returned, passing <code>num-1</code> and the newly-appended <code>array</code> as arguments. This call will send us right back to the top, only with a slightly smaller number. Each time the base case is not met, the number will be added to the array, and the method will be called with the next smallest number. When a number smaller than 0 is finally passed as an argument, the now-longer <code>array</code> will be returned.</p>
+
+<p>So what happens when we call <code>smaller_ary(3)</code>? Here&rsquo;s a breakdown:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">array</span><span class="o">=[]</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;if num &amp;lt; 0 # base case</span>
+</span><span class='line'><span class="sr">    return array</span>
+</span><span class='line'><span class="sr">else</span>
+</span><span class='line'><span class="sr">    array &amp;lt;&amp;lt; num # append the number to the array</span>
+</span><span class='line'><span class="sr">    return smaller_ary(num-1, array) # getting closer to the base case</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">smaller_ary</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#=&gt; [3, 2, 1, 0]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>These examples have been great introductions to recursion, but they simply scratch the surface in terms of what can be accomplished. Most recursive methods go beyond emulating loops and divide complex problems into smaller, simpler, sub-problems. If you&rsquo;d like to learn more, check out <a href="http://www.theodinproject.com/ruby-programming/recursive-methods">this article from The Odin Project</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby: Enumerable#cycle]]></title>

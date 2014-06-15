@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Recursion - Andrew Adams</title>
+  <meta name="author" content="Andrew Adams">
+
+  
+  <meta name="description" content="Recursion is a tricky subject. There are hundreds of blog posts strewn across the internet attempting to provide thorough explanations, often &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://andrewada.ms/blog/2014/recursion">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Andrew Adams" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50103556-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner">
+	<div class="header-title"><a href="/">Andrew Adams</a></div>
+
+
+	<br><div class="header-subtitle">Learning Full Stack Rails Development</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://www.github.com/andrewjadams3" target="_blank" title="GitHub"><i class="fa fa-github-square"><span class="hidden">GitHub</span></i></a></li>
+  <li><a href="https://twitter.com/andrewjadams3" target="_blank" title="Twitter"><i class="fa fa-twitter-square"><span class="hidden">Twitter</span></i></a></li>
+  <li><a href="http://www.linkedin.com/in/andrewjadams3" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square"><span class="hidden">LinkedIn</span></i></a></li>
+  <li><a href="mailto:andrewjadams3@gmail.com" title="Email"><i class="fa fa-envelope"></i><span class="hidden">Email</span></a></li>
+  <li><a href="/atom.xml" title="Subscribe via RSS"><i class="fa fa-rss"><span class="hidden">RSS Feed</span></i></a></li>
+</ul>
+
+<form>
+  <fieldset role="search">
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+  
+    
+      <h1 class="entry-title">Recursion</h1>
+    
+  
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-14T16:22:09-05:00" pubdate data-updated="true">Jun 14<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Recursion is a tricky subject. There are hundreds of blog posts strewn across the internet attempting to provide thorough explanations, often accompanied by seemingly simple snippets of code. No matter how elegant these explanations may be, most people find themselves working through example after example before finally (<em>maybe, kind of</em>) starting to get a hold on the subject. I&rsquo;ve decided (against my better judgment) to toss my hat into the ring, and highlight a few examples which helped me initially understand recursion. Hopefully they will help you experience a &lsquo;light bulb moment&rsquo; as they did for me.</p>
+
+<!-- more -->
+
+
+<p>Recursion in programming refers to a function/method which calls itself. It&rsquo;s that simple! Well, simple in theory. In practice, recursive functions can be difficult to design and interpret. In fact, recursive methods are often hard to follow precisely <em>because</em> they are deceptively simple. In just two or three lines, you can write a recursive method which does a whole hell of a lot of work.</p>
+
+<p>Let&rsquo;s first look at how we can write a method which calls itself in Ruby:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">num</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">smaller</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">smaller</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="mi">3</span>
+</span><span class='line'><span class="mi">2</span>
+</span><span class='line'><span class="mi">1</span>
+</span><span class='line'><span class="mi">0</span>
+</span><span class='line'><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">forever</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this example, you can see that the <code>smaller</code> method takes a number as an argument, prints that number, and then  returns a call to itself, passing <code>num-1</code> as an argument. In essence, the method is simply counting backwards from the original number.</p>
+
+<p>This is great, we&rsquo;ve already created a recursive method! With one problem, however: it will never end. If you run this method as-is, it will never stop <code>puts</code>ing smaller and smaller numbers. To fix this, we need a base case.</p>
+
+<p>A <strong>base case</strong> prevents a recursive method from calling itself when a certain condition is met. In the case of our <code>smaller</code> method, a logical base case could be when the number 0 is reached, or more specifically, when the number zero is passed as an argument. When this happens, we will simply have the method <code>return</code> rather than call itself again.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">num</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">smaller</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">smaller</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="mi">3</span>
+</span><span class='line'><span class="mi">2</span>
+</span><span class='line'><span class="mi">1</span>
+</span><span class='line'><span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Every time the <code>smaller</code> method runs, it calls itself with a smaller number. Eventually, the number 0 will be reached, and the method will end. There are, of course, shorter ways to write the code above, but the if/else statement illustrates very clearly what is happening.</p>
+
+<p>At this point, you may be thinking, &ldquo;hey, that looks just like a loop!&rdquo; And you&rsquo;d be right! Anything that can be written recursively can also be refactored and written as a loop. In fact, depending on the problem being solved, a recursive function can eat up resources exponentially faster than its looped counterpart. However, recursive functions are often more elegant, and in many situations, simpler to implement.</p>
+
+<p>Let&rsquo;s look at one, slightly more complex example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">array</span><span class="o">=[]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">array</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="n">num</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Can you tell what this code is doing? And if so, what is the base case? What would happen if we called <code>smaller_ary(3)</code>? Let&rsquo;s find out!</p>
+
+<p>First, let&rsquo;s find our base case:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">array</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When the <code>num</code> argument is less than 0, the <code>array</code> argument will be returned. Although our previous example simply <code>return</code>ed, a base case doesn&rsquo;t necessarily need to return nothing. In fact, a base case is usually going to return <em>something</em>, either directly, or to be handed back to previous recursive calls.</p>
+
+<p>If that was our base case, this would be our recursive call:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">else</span>
+</span><span class='line'>      <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="n">num</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When <code>num</code> is not smaller than zero (for example: 3), that number will first be appended onto the <code>array</code> argument. <em>(You may have noticed that when this method is called with only a number as an argument, the <code>array</code> argument will default to an empty array.)</em> Next, a call to <code>smaller_ary</code> will be returned, passing <code>num-1</code> and the newly-appended <code>array</code> as arguments. This call will send us right back to the top, only with a slightly smaller number. Each time the base case is not met, the number will be added to the array, and the method will be called with the next smallest number. When a number smaller than 0 is finally passed as an argument, the now-longer <code>array</code> will be returned.</p>
+
+<p>So what happens when we call <code>smaller_ary(3)</code>? Here&rsquo;s a breakdown:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">array</span><span class="o">=[]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="c1"># base case</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">array</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="c1"># append the number to the array</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">smaller_ary</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span> <span class="c1"># getting closer to the base case</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">smaller_ary</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#=&gt; [3, 2, 1, 0]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These examples have been great introductions to recursion, but they simply scratch the surface in terms of what can be accomplished. Most recursive methods go beyond emulating loops and divide complex problems into smaller, simpler, sub-problems. If you&rsquo;d like to learn more, check out <a href="http://www.theodinproject.com/ruby-programming/recursive-methods">this article from The Odin Project</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andrew Adams</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-14T16:22:09-05:00" pubdate data-updated="true">Jun 14<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dbc/'>DBC</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/sql-or-nosql/" title="Previous Post: SQL or NoSQL?"><i class="fa fa-reply"></i> SQL or NoSQL?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/recursion/">Recursion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/sql-or-nosql/">SQL or NoSQL?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/issues-in-tech-moocs/">Issues in tech: MOOCs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/ruby-enumerable-number-cycle/">Ruby: Enumerable#cycle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/popularity-of-javascript/">Popularity of JavaScript</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  Andrew Adams 
+  <a href="/atom.xml" title="Subscribe via RSS"><i class="fa fa-rss"></i></a>
+  <br/>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>.
+	  
+  </span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'andrewadams';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://andrewada.ms/blog/2014/recursion/';
+        var disqus_url = 'http://andrewada.ms/blog/2014/recursion/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
