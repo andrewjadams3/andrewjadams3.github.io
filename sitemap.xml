@@ -46,7 +46,7 @@
     </url>
     <url>
         <loc>http://andrewada.ms/about/</loc>
-        <lastmod>2014-06-11T12:09:32-05:00</lastmod>
+        <lastmod>2014-08-07T21:29:24-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewada.ms/blog/archives/</loc>
@@ -58,7 +58,11 @@
     </url>
     <url>
         <loc>http://andrewada.ms/projects/</loc>
-        <lastmod>2014-06-11T20:09:17-05:00</lastmod>
+        <lastmod>2014-08-07T22:14:08-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://andrewada.ms/resume/</loc>
+        <lastmod>2014-08-07T21:42:06-05:00</lastmod>
     </url>
     <url>
         <loc>http://andrewada.ms/robots.txt</loc>
