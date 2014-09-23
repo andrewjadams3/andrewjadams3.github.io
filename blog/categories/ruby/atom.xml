@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Andrew Adams]]></title>
   <link href="http://andrewada.ms/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://andrewada.ms/"/>
-  <updated>2014-09-02T10:50:29-05:00</updated>
+  <updated>2014-09-23T14:44:25-05:00</updated>
   <id>http://andrewada.ms/</id>
   <author>
     <name><![CDATA[Andrew Adams]]></name>
@@ -12,6 +12,164 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linked Lists]]></title>
+    <link href="http://andrewada.ms/blog/2014/linked-lists/"/>
+    <updated>2014-09-23T10:38:55-05:00</updated>
+    <id>http://andrewada.ms/blog/2014/linked-lists</id>
+    <content type="html"><![CDATA[<p>Something that I wished I had learned more about during my time at <a href="http://devbootcamp.com">Dev Bootcamp</a> was how to construct basic data structures. I know, it sounds fairly boring, and maybe even unnecessary for day-to-day web development, but I&rsquo;ve always been curious as to what&rsquo;s going on behind the scenes when I instantiate or modify something like a hash.</p>
+
+<p>Luckily for me, <a href="https://twitter.com/dastels">Dave Astels</a> has been volunteering his time at DBC to teach students how to implement data structures from the ground up. Recently, Dave held a class on linked lists which I found to be incredibly fun and informative. In fact, it inspired me to learn as much as I can about data structures during my job search. I&rsquo;m excited to share with you some of what I&rsquo;ve learned about linked lists so far, and maybe even convince you to find ways to implement them yourself!</p>
+
+<!-- more -->
+
+
+<p>At a basic level, a linked list is a series of nodes with each node referencing the next in the series. Based on this description, we can start to map out what classes we&rsquo;ll need to build our own. A <code>Node</code> class is pretty much a given (we&rsquo;ll call ours <code>ListNode</code>), but we&rsquo;ll also need a class that&rsquo;s able to keep track of which node is at the head of the list (as well as the ability to modify the list of nodes). We&rsquo;ll call this our <code>LinkedList</code>.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">LinkedList</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">head</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;@head = head</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">ListNode</span>
+</span><span class='line'>  <span class="kp">attr_reader</span> <span class="ss">:value</span><span class="p">,</span> <span class="ss">:rest</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def initialize(value, rest=nil)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="vi">@value</span> <span class="o">=</span> <span class="n">value</span>
+</span><span class='line'><span class="vi">@rest</span> <span class="o">=</span> <span class="n">rest</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>You&rsquo;ll notice that our <code>ListNode</code> is instantiated with <code>@value</code> and <code>@rest</code>. <code>@value</code> is what the node represents, and can be any generic data type (such as a <code>String</code> or <code>Integer</code>). <code>@rest</code> can eventually reference another node, but is initialized as <code>nil</code> (meaning that it is the final node in the list).</p>
+
+<p>This is a great foundation, but so far we have no way of linking any new nodes. Let&rsquo;s fix that!</p>
+
+<p>An <code>#append</code> method that adds a new node to the end of a list would be the best place to start. In order to implement this, we&rsquo;ll first work with our <code>LinkedList</code> class.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">LinkedList</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">head</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;@head = head</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;if @head.nil?</span>
+</span><span class='line'><span class="sr">  @head = ListNode.new(value)</span>
+</span><span class='line'><span class="sr">else</span>
+</span><span class='line'><span class="sr">  @head.append(value)</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><code>LinkedList#append</code> first checks to see if the current list has a <code>@head</code> (which represents the first node). If it doesn&rsquo;t, it creates a new <code>ListNode</code> with the appropriate value and assigns it to <code>@head</code>. If <code>@head</code> already exists, an <code>#append</code> method is called on that specific node, essentially passing the appending responsibility to an instance of <code>ListNode</code>. Looks like <code>ListNode</code> is going to need its own <code>#append</code> method&hellip;</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ListNode</span>
+</span><span class='line'>  <span class="kp">attr_reader</span> <span class="ss">:value</span><span class="p">,</span> <span class="ss">:rest</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def initialize(value, rest=nil)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="vi">@value</span> <span class="o">=</span> <span class="n">value</span>
+</span><span class='line'><span class="vi">@rest</span> <span class="o">=</span> <span class="n">rest</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def append(value)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="vi">@rest</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>  <span class="vi">@rest</span> <span class="o">=</span> <span class="no">ListNode</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="vi">@rest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><code>ListNode#append</code> follows very similar logic. If <code>@rest</code> is <code>nil</code> (meaning the current node is the last one in the list), a new node is created and then referenced appropriately. Otherwise, the <code>#append</code> method is called recursively on <code>@rest</code>, meaning that each successive node will be checked until the end of the list is reached.</p>
+
+<p>At this point, we can create a new linked list, and push nodes sequentially onto the end. This is really just the start of what a linked list of capable of, but I&rsquo;m going to allow you to experiment on your own from here. Some other essential methods you could try developing would be <code>#find</code>, <code>#delete</code>, <code>#prepend</code>, and <code>#insert_after</code>. If you&rsquo;re feeling adventurous, you could even try to implement <code>#map</code> and <code>#reduce</code>!</p>
+
+<p>If you&rsquo;d like to see my implementation of these methods, <a href="https://gist.github.com/andrewjadams3/ebddee07291e004bc712">check out my linked list gist on GitHub</a>. Thanks again to <a href="https://twitter.com/dastels">Dave Astels</a> for getting me started!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recursion]]></title>
