@@ -9,37 +9,81 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arima+Madurai:400,700%7CMerriweather+Sans:700%7CMerriweather:300">
 </head>
 <body>
-  <div class="wrapper">
-    <section class="site-section" id="intro">
-      <div class="section-container">
-        <div class="section-column column-first">
-          <header class="navbar sans-font">
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
-          </header>
-          <div class="intro-headline">
-            <h6 class="pre-heading sans-font">
-              Hi! My name is
-            </h6>
-            <h1>Andrew Adams</h1>
-            <p class="intro-blurb">
-              Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
-              rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
-              interdum magna. Donec posuere nibh ut nisi tempor laoreet.
-            </p>
-          </div>
-          <div class="intro-scroll sans-font">
-            <a href="#">Scroll for more</a>
-          </div>
+  <section class="site-section" id="intro">
+    <div class="container">
+      <div class="section-column column-first">
+        <header class="navbar sans-font">
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+          <a href="#">Experience</a>
+          <a href="#contact">Contact</a>
+        </header>
+        <div class="intro-headline">
+          <h6 class="pre-heading sans-font">
+            Hi! My name is
+          </h6>
+          <h1>Andrew Adams</h1>
+          <p class="intro-blurb">
+            Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
+            rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
+            interdum magna. Donec posuere nibh ut nisi tempor laoreet.
+          </p>
         </div>
-        <div class="section-column column-second">
-          <div class="intro-image">
-          </div>
+        <div class="intro-scroll sans-font">
+          <a href="#">Scroll for more</a>
         </div>
       </div>
-    </section>
-  </div>
+      <div class="section-column column-second">
+        <div class="intro-image">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="site-section" id="contact">
+    <div class="container">
+      <div class="section-column column-first">
+        <div class="contact-headline">
+          <h6 class="pre-heading sans-font">
+            Interested in working together?
+          </h6>
+          <h2>Let's get in touch</h2>
+          <p class="contact-blurb">
+            Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
+            rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
+            interdum magna. Donec posuere
+            <a href="">andrewjadams3@gmail.com</a>
+            nibh ut nisi tempor laoreet.
+          </p>
+        </div>
+        <button class="contact-button inverse">
+          Send an email
+        </button>
+      </div>
+    </div>
+    <footer class="sans-font">
+      <div class="container">
+        <div class="footer-links left-links">
+          <a href="https://www.linkedin.com/in/andrewjadams3/">Linkedin</a>
+          <a href="https://instagram.com/andrewjadams3">Instagram</a>
+          <a href="https://soundcloud.com/mikesnatchers">Soundcloud</a>
+        </div>
+        <div class="footer-links right-links">
+          <a href="https://github.com/andrewjadams3/andrewjadams3.github.io">Made by Andrew Adams</a>
+        </div>
+      </div>
+    </footer>
+  </section>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+</script>
 </html>
