@@ -1,0 +1,137 @@
+/* Base Styles */
+/* ------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Merriweather";
+  background-color: #fff;
+  color: #444;
+  font-weight: 300;
+}
+
+/* Headings */
+/* ------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arima Madurai";
+  font-weight: 400;
+  color: #1F2532;
+  text-transform: uppercase;
+  line-height: 1.48em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.75em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 0.875em;
+}
+
+.pre-header {
+  font-family: "Merriweather Sans";
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #2E86DE;
+  margin-bottom: 5px;
+}
+
+/* Containers */
+/* ------------------------------------------------------------------------- */
+
+.wrapper {
+  width: 850px;
+  margin: 0 auto;
+}
+
+.site-section {
+  margin: 100px 0;
+}
+
+.section-container {
+  display: flex;
+}
+
+.section-column {
+  flex: 1;
+}
+
+.column-first {
+  margin-right: 15px;
+}
+
+.column-second {
+  margin-left: 15px;
+}
+
+/* Navigation */
+/* ------------------------------------------------------------------------- */
+
+.navbar {
+  display: flex;
+  margin: 15px 0;
+}
+
+.navbar a {
+  font-family: "Merriweather Sans";
+  font-weight: 700;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  color: #8C96A9;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #1F2532;
+}
+
+.navbar a {
+  padding: 10px 12px;
+}
+
+.navbar a:first-of-type {
+  padding-left: 0;
+}
+
+.navbar a:last-of-type {
+  padding-right: 0;
+}
+
+/* Intro Section */
+/* ------------------------------------------------------------------------- */
+
+#intro {
+  margin-top: 50px;
+}
+
+/* Breakpoints */
+/* ------------------------------------------------------------------------- */
+/* 992px, 480px */
