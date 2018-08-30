@@ -14,12 +14,14 @@ html {
 body {
   font-family: "Merriweather";
   background-color: #fff;
-  color: #444;
+  color: #666;
   font-weight: 300;
 }
 
-/* Headings */
+/* Typography */
 /* ------------------------------------------------------------------------- */
+
+/* Headings */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Arima Madurai";
@@ -53,12 +55,23 @@ h6 {
   font-size: 0.875em;
 }
 
-.pre-header {
+.pre-heading {
+  color: #2E86DE;
+  margin-bottom: 5px;
+}
+
+/* General */
+
+p {
+  line-height: 2em;
+  color: ;
+}
+
+.sans-font {
   font-family: "Merriweather Sans";
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #2E86DE;
-  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 
 /* Containers */
@@ -98,14 +111,10 @@ h6 {
 }
 
 .navbar a {
-  font-family: "Merriweather Sans";
-  font-weight: 700;
   font-size: 0.75em;
-  letter-spacing: 0.1em;
   color: #8C96A9;
-  text-transform: uppercase;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
 
 .navbar a:hover,
@@ -130,6 +139,32 @@ h6 {
 
 #intro {
   margin-top: 50px;
+}
+
+#intro .column-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.intro-image {
+  height: 500px;
+  width: 350px;
+  float: right;
+  background: linear-gradient(#0D1318, #FFFFFF);
+  opacity: 0.15;
+}
+
+.intro-scroll a {
+  font-size: 0.75em;
+  color: #D2DAE2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.intro-scroll a:hover,
+.intro-scroll a:focus {
+  color: #8C96A9;
 }
 
 /* Breakpoints */
