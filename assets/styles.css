@@ -13,7 +13,7 @@ html {
 
 body {
   background-color: #fff;
-  font-family: "Merriweather";
+  font-family: "Merriweather", Georgia, serif;
   color: #2F384B;
   font-weight: 300;
 }
@@ -31,7 +31,7 @@ p {
 }
 
 .sans-font {
-  font-family: "Merriweather Sans";
+  font-family: "Merriweather Sans", Verdana, sans-serif;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -45,7 +45,7 @@ p {
 /* ------------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Arima Madurai";
+  font-family: "Arima Madurai", Helvetica, sans-serif;
   font-weight: 400;
   color: #1F2532;
   text-transform: uppercase;
@@ -89,7 +89,7 @@ h6 {
 
 a.button {
   display: inline-block;
-  font-family: "Arima Madurai";
+  font-family: "Arima Madurai", Helvetica, sans-serif;
   font-size: 1.125em;
   font-weight: 700;
   text-transform: uppercase;
