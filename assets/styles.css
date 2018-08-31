@@ -22,6 +22,11 @@ p {
   line-height: 2em;
 }
 
+.placeholder {
+  background: linear-gradient(#0D1318, #FFFFFF);
+  opacity: 0.15;
+}
+
 /* Headings */
 /* ------------------------------------------------------------------------- */
 
@@ -47,14 +52,17 @@ h3 {
 
 h4 {
   font-size: 1.5em;
+  font-weight: 700;
 }
 
 h5 {
   font-size: 1.125em;
+  font-weight: 700;
 }
 
 h6 {
   font-size: 0.875em;
+  font-weight: 700;
 }
 
 .pre-heading {
@@ -75,7 +83,7 @@ h6 {
 button {
   font-family: "Arima Madurai";
   font-size: 1.125em;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   color: #1F2532;
   border: 1px solid #D2DAE2;
@@ -91,13 +99,13 @@ button:focus {
 }
 
 button.inverse {
-  color: #D2DAE2;
+  color: #fff;
   border: 2px solid #1E8FE1;
 }
 
 button.inverse:hover,
 button.inverse:focus {
-  color: #fff;
+  background: #1E8FE1;
 }
 
 /* Containers */
@@ -185,8 +193,6 @@ button.inverse:focus {
 .intro-image {
   height: 500px;
   width: 350px;
-  background: linear-gradient(#0D1318, #FFFFFF);
-  opacity: 0.15;
 }
 
 .intro-scroll a {
@@ -201,6 +207,50 @@ button.inverse:focus {
   color: #8C96A9;
 }
 
+/* Projects */
+/* ------------------------------------------------------------------------- */
+
+.project-container + .project-container {
+  margin-top: 100px
+}
+
+.project-title {
+  margin-bottom: 15px;
+}
+
+.project-description {
+  margin-bottom: 20px;
+}
+
+.project-details {
+  margin-bottom: 35px;
+  font-size: 0.875em;
+  color: #8C96A9;
+}
+
+.project-image-bg {
+  position: relative;
+  height: 400px;
+  width: 300px;
+}
+
+.project-image {
+  position: absolute;
+  height: 250px;
+  width: 310px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.project-image.left {
+  left: 40px;
+}
+
+.project-image.right {
+  right: 40px;
+}
+
 /* Experience */
 /* ------------------------------------------------------------------------- */
 
@@ -209,7 +259,7 @@ button.inverse:focus {
 }
 
 .experience-button .unbold {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .experience-company {
@@ -245,6 +295,7 @@ button.inverse:focus {
 #contact h2 {
   margin: 20px 0 15px;
   color: #fff;
+  font-weight: 700;
 }
 
 #contact .column-first {
@@ -308,9 +359,17 @@ footer a:last-of-type {
   padding-right: 0;
 }
 
-.footer-links {
-  flex: 1;
+.footer-container {
   justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  flex: 1;
+}
+
+.footer-links.right-links {
+  justify-content: flex-end;
 }
 
 /* Breakpoints */
