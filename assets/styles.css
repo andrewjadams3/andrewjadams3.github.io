@@ -14,7 +14,7 @@ html {
 body {
   background-color: #fff;
   font-family: "Merriweather";
-  color: #666;
+  color: #2F384B;
   font-weight: 300;
 }
 
@@ -22,9 +22,23 @@ p {
   line-height: 2em;
 }
 
+/* Utilities */
+/* ------------------------------------------------------------------------- */
+
 .placeholder {
   background: linear-gradient(#0D1318, #FFFFFF);
   opacity: 0.15;
+}
+
+.sans-font {
+  font-family: "Merriweather Sans";
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.show-md {
+  display: none;
 }
 
 /* Headings */
@@ -68,13 +82,6 @@ h6 {
 .pre-heading {
   color: #2E86DE;
   margin-bottom: 10px;
-}
-
-.sans-font {
-  font-family: "Merriweather Sans";
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 /* Buttons */
@@ -136,12 +143,7 @@ a.button.inverse:focus {
   flex: 1;
 }
 
-.column-first {
-  margin-right: 15px;
-}
-
 .column-second {
-  margin-left: 15px;
   align-items: flex-end;
 }
 
@@ -229,17 +231,17 @@ a.button.inverse:focus {
   line-height: 1.38em;
 }
 
-#about .about-blurb + .about-blurb {
+.light-amp {
+  color: #8C96A9;
+}
+
+.about-blurb + .about-blurb {
   margin-top: 20px;
 }
 
 .about-image {
   height: 350px;
   width: 350px;
-}
-
-.light-amp {
-  color: #8C96A9;
 }
 
 /* Projects */
@@ -263,26 +265,30 @@ a.button.inverse:focus {
   color: #8C96A9;
 }
 
-.project-image-bg {
+.project-image-container {
   position: relative;
   height: 400px;
   width: 300px;
 }
 
-.project-image {
+.project-image-bg {
+  height: 400px;
+  width: 300px;
+}
+
+.project-image-abs {
   position: absolute;
   height: 250px;
   width: 360px;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 1;
 }
 
-.project-image.left {
+.project-image-abs.left {
   left: 40px;
 }
 
-.project-image.right {
+.project-image-abs.right {
   right: 40px;
 }
 
@@ -314,6 +320,10 @@ a.button.inverse:focus {
 
 .experience-info + .experience-info {
   margin-bottom: 20px;
+}
+
+.experience-spacer {
+  margin: 0 5px;
 }
 
 /* Contact */
@@ -410,4 +420,105 @@ footer a:last-of-type {
 /* Breakpoints */
 /* ------------------------------------------------------------------------- */
 
-/* 992px, 480px */
+/* Medium-screen */
+@media only screen and (max-width: 992px)  {
+  
+  .hide-md {
+    display: none;
+  }
+
+  .show-md {
+    display: block;
+  }
+
+  .column-first,
+  .column-second {
+    align-items: center;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .column-content {
+    width: 500px;
+  }
+
+  .col-reverse-md {
+    flex-direction: column-reverse;
+  }
+
+  /* Intro */
+  /* ------------------------- */
+
+  #intro {
+    padding-top: 0;
+  }
+
+  #intro h1 {
+    padding: 5px 0;
+  }
+
+  .navbar {
+    margin: 35px 0 0;
+  }
+
+  .intro-headline {
+    margin: 85px 0 100px;
+  }
+
+  /* About */
+  /* ------------------------- */
+
+  .about-heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  /* Projects */
+  /* ------------------------- */
+
+  .project-image {
+    display: block;
+    height: 325px;
+    width: 450px;
+    margin-bottom: 35px;
+  }
+
+  /* Experience */
+  /* ------------------------- */
+
+  .experience-info-container {
+    display: flex;
+    width: 375px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .experience-info {
+    margin-bottom: 0;
+  }
+
+  .experience-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-details span + span {
+    margin-top: 15px;
+  }
+
+  .at-a-glance {
+    margin-bottom: 50px;
+  }
+
+  /* Footer */
+  /* ------------------------- */
+
+  .footer-links,
+  .footer-links.right-links {
+    justify-content: center;
+  }
+}
