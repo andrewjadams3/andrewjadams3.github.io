@@ -79,7 +79,7 @@ button {
   text-transform: uppercase;
   color: #1F2532;
   border: 1px solid #D2DAE2;
-  padding: 18px 40px;
+  padding: 15px 40px;
   background: none;
   cursor: pointer;
   transition: all 0.3s;
@@ -109,11 +109,19 @@ button.inverse:focus {
   margin: 0 auto;
 }
 
+.heading-container {
+  margin-bottom: 50px;
+}
+
 .site-section {
   padding: 100px 0;
+  border-bottom: 1px solid #E7EBEE;
 }
 
 .section-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex: 1;
 }
 
@@ -123,6 +131,11 @@ button.inverse:focus {
 
 .column-second {
   margin-left: 15px;
+  align-items: flex-end;
+}
+
+.column-content {
+  width: 350px;
 }
 
 /* Navigation */
@@ -157,7 +170,7 @@ button.inverse:focus {
   padding-right: 0;
 }
 
-/* Intro Section */
+/* Intro */
 /* ------------------------------------------------------------------------- */
 
 #intro {
@@ -166,14 +179,12 @@ button.inverse:focus {
 
 #intro .column-first {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
 .intro-image {
   height: 500px;
   width: 350px;
-  float: right;
   background: linear-gradient(#0D1318, #FFFFFF);
   opacity: 0.15;
 }
@@ -190,6 +201,36 @@ button.inverse:focus {
   color: #8C96A9;
 }
 
+/* Experience */
+/* ------------------------------------------------------------------------- */
+
+#experience {
+  border-bottom: none;
+}
+
+.experience-button .unbold {
+  font-weight: normal;
+}
+
+.experience-company {
+  margin-bottom: 30px;
+}
+
+.experience-title {
+  color: #1F2532;
+  margin-bottom: 15px;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+
+.experience-info {
+  margin-bottom: 35px;
+}
+
+.experience-info + .experience-info {
+  margin-bottom: 20px;
+}
+
 /* Contact */
 /* ------------------------------------------------------------------------- */
 
@@ -198,6 +239,7 @@ button.inverse:focus {
   color: #D2DAE2;
   text-align: center;
   padding-bottom: 0;
+  border-bottom: none;
 }
 
 #contact h2 {
