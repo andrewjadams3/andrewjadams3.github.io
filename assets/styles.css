@@ -67,7 +67,7 @@ h6 {
 
 .pre-heading {
   color: #2E86DE;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .sans-font {
@@ -190,6 +190,10 @@ button.inverse:focus {
   justify-content: space-between;
 }
 
+.intro-blurb {
+  margin-top: 5px;
+}
+
 .intro-image {
   height: 500px;
   width: 350px;
@@ -204,6 +208,34 @@ button.inverse:focus {
 
 .intro-scroll a:hover,
 .intro-scroll a:focus {
+  color: #8C96A9;
+}
+
+/* About */
+/* ------------------------------------------------------------------------- */
+
+#about .column-second {
+  justify-content: space-between;
+}
+
+.about-heading {
+  text-align: right;
+}
+
+.about-heading h2 {
+  line-height: 1.38em;
+}
+
+#about .about-blurb + .about-blurb {
+  margin-top: 20px;
+}
+
+.about-image {
+  height: 350px;
+  width: 350px;
+}
+
+.light-amp {
   color: #8C96A9;
 }
 
@@ -237,7 +269,7 @@ button.inverse:focus {
 .project-image {
   position: absolute;
   height: 250px;
-  width: 310px;
+  width: 360px;
   top: 50%;
   transform: translateY(-50%);
   opacity: 1;
