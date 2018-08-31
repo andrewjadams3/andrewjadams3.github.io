@@ -80,31 +80,34 @@ h6 {
 /* Buttons */
 /* ------------------------------------------------------------------------- */
 
-button {
+a.button {
+  display: inline-block;
   font-family: "Arima Madurai";
   font-size: 1.125em;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 1.48em;
   color: #1F2532;
   border: 1px solid #D2DAE2;
-  padding: 15px 40px;
+  padding: 16px 40px;
   background: none;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
-button:hover,
-button:focus {
+a.button:hover,
+a.button:focus {
   border-color: #2F384B;
 }
 
-button.inverse {
+a.button.inverse {
   color: #fff;
   border: 2px solid #1E8FE1;
 }
 
-button.inverse:hover,
-button.inverse:focus {
+a.button.inverse:hover,
+a.button.inverse:focus {
   background: #1E8FE1;
 }
 
