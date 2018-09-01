@@ -157,6 +157,7 @@ a.button.inverse:focus {
 .navbar {
   display: flex;
   margin: 15px 0;
+  border-bottom: 1px solid #fff;
 }
 
 .navbar a {
@@ -181,6 +182,10 @@ a.button.inverse:focus {
 
 .navbar a:last-of-type {
   padding-right: 0;
+}
+
+.nav-icon {
+  display: none;
 }
 
 /* Intro */
@@ -444,7 +449,7 @@ footer a:last-of-type {
   }
 
   .column-content {
-    width: auto;
+    width: 100%;
   }
 
   .col-reverse-md {
@@ -566,6 +571,48 @@ footer a:last-of-type {
 
   .pre-heading {
     font-size: 0.875em;
+  }
+
+  /* Intro */
+  /* ------------------------- */
+
+  .intro-headline {
+    margin: 100px 0;
+  }
+
+  /* Navigation */
+  /* ------------------------- */
+
+  .nav-icon {
+    display: block;
+    position: absolute;
+    padding: 5px;
+    top: 25px;
+    left: 25px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    margin: 25px 0 0;
+    max-height: 0;
+    width: 80%;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+  }
+
+  .navbar.open {
+    max-height: 200px;
+    border-bottom: 1px solid #E7EBEE;
+  }
+
+  .navbar a,
+  .navbar a:first-of-type,
+  .navbar a:last-of-type {
+    padding: 15px;
+  }
+
+  .navbar a:last-of-type {
+    margin-bottom: 15px;
   }
 
   /* Experience */

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>Andrew Adams | Designer &amp; Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./assets/reset.css">
-  <link rel="stylesheet" type="text/css" href="./assets/styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arima+Madurai:400,700%7CMerriweather+Sans:700%7CMerriweather:300">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50103556-1"></script>
   <script>
@@ -19,7 +19,10 @@
   <section class="site-section" id="intro">
     <div class="container">
       <div class="section-column column-first">
-        <nav class="navbar sans-font hide-sm">
+        <a href="javascript:void(0);" class="nav-icon" onclick="toggleMenu()">
+          <img src="./assets/menu.svg" />
+        </a>
+        <nav class="navbar sans-font" id="topnav">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -216,7 +219,7 @@
             interdum magna. Donec posuere nibh ut nisi tempor laoreet.
           </p>
         </div>
-        <div class="show-md">
+        <div class="column-content show-md">
           <a href="#" class="button experience-button">
             View resume <span class="unbold">(.pdf)</span>
           </a>
@@ -260,9 +263,9 @@
   </section>
 </body>
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth',
@@ -271,5 +274,11 @@
       });
     });
   });
+</script>
+<script>
+  function toggleMenu() {
+    var x = document.getElementById('topnav');
+    x.classList.toggle('open');
+  }
 </script>
 </html>
