@@ -338,6 +338,10 @@ a.button.inverse:focus {
   margin: 0 5px;
 }
 
+.experience-blurb {
+  width: auto;
+}
+
 /* Contact */
 /* ------------------------------------------------------------------------- */
 
@@ -522,7 +526,7 @@ footer a:last-of-type {
     margin-top: 15px;
   }
 
-  .at-a-glance {
+  .experience-blurb {
     margin-bottom: 50px;
   }
 
