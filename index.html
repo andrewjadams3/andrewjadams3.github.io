@@ -17,23 +17,31 @@
   </script>
 </head>
 <body>
-  <section class="site-section" id="intro">
+  <header id="intro" class="site-section">
     <div class="container">
       <div class="section-column column-first">
-        <a href="javascript:void(0);" class="nav-icon" onclick="toggleMenu()">
-          <img src="./assets/menu.svg" />
+        <a href="#main-menu"
+            class="nav-icon"
+            id="menu-toggle"
+            role="button"
+            aria-label="Open main menu"
+            aria-expanded="false">
+          <img src="./assets/menu.svg" aria-hidden="true" />
         </a>
-        <nav class="navbar sans-font" id="topnav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+        <nav class="navbar sans-font"
+            id="main-menu"
+            role="navigation"
+            aria-label="Main menu">
+          <a href="#about" data-scroll="true">About</a>
+          <a href="#projects" data-scroll="true">Projects</a>
+          <a href="#experience" data-scroll="true">Experience</a>
+          <a href="#contact" data-scroll="true">Contact</a>
         </nav>
         <div class="intro-headline">
           <h6 class="pre-heading sans-font">
             Hi! My name is
           </h6>
-          <h1>Andrew Adams</h1>
+          <h1 id="intro-title">Andrew Adams</h1>
           <p class="intro-blurb column-content">
             I'm a product designer with a background in software development,
             education, and music. With over four years of professional
@@ -42,248 +50,290 @@
           </p>
         </div>
         <div class="intro-scroll sans-font">
-          <a href="#about">Scroll for more</a>
+          <a href="#about" aria-hidden="true" data-scroll="true">
+            Scroll for more
+          </a>
         </div>
       </div>
       <div class="section-column column-second hide-md">
         <div class="intro-image placeholder"></div>
       </div>
     </div>
-  </section>
-  <section class="site-section" id="about">
-    <div class="container col-reverse-md">
-      <div class="section-column column-first">
-        <p class="about-blurb column-content">
-          Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
-          rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
-          interdum magna. Donec posuere nibh ut nisi tempor laoreet.
-        </p>
-        <p class="about-blurb column-content">
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          famesac turpis egestas. Nullam eget ex sem. Aliquam nec laoreet
-          vitae. In posuere neque metus, a dapibus arcu vitae eu. Mauris
-          scelerisque, justo vestibulum sagittis venenatis.
-        </p>
-        <p class="about-blurb column-content">
-          Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
-          rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
-          interdum magna. Donec posuere nibh ut nisi tempor laoreet.
-        </p>
-      </div>
-      <div class="section-column column-second">
-        <div class="about-heading">
-          <h6 class="pre-heading sans-font">
-            About me
-          </h6>
-          <h2>Designer <span class="light-amp">&amp;</span></h2>
-          <h2>Developer</h2>
-        </div>
-        <img src="./images/about.jpg" class="about-image hide-md">
-      </div>
-    </div>
-  </section>
-  <section class="site-section" id="projects">
-    <div class="container heading-container">
-      <div class="section-column column-first">
-        <h2>Projects</h2>
-      </div>
-    </div>
-    <div class="container project-container">
-      <div class="section-column column-first">
-        <img src="./images/narratives.jpg" class="project-image" />
-        <div class="project-image-container hide-md hide-md">
-          <img src="./images/bg1.jpg" class="project-image-bg" />
-          <img src="./images/narratives.jpg" class="project-image-abs left" />
-        </div>
-      </div>
-      <div class="section-column column-second">
-        <div class="column-content">
-          <h6 class="pre-heading sans-font">
-            Designer
-          </h6>
-          <h4 class="project-title">Interactive Stories</h4>
-          <p class="project-description">
-            As a product designer at Narrative Science, I get the chance to work
-            on groundbreaking projects with unique design challenges every day.
-            The goal of our current initiative is to provide businesses with a
-            self-service tool that uses data to intelligently generate
-            interactive stories at scale.
+  </header>
+  <main role="main">
+    <section id="about" class="site-section">
+      <div class="container col-reverse-md">
+        <div class="section-column column-first">
+          <p class="about-blurb column-content">
+            Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
+            rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
+            interdum magna. Donec posuere nibh ut nisi tempor laoreet.
           </p>
-          <div class="project-details">
-            Ongoing project | In development
-          </div>
-          <a href="#" class="button">
-            View case study
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="container project-container col-reverse-md">
-      <div class="section-column column-first">
-        <div class="column-content">
-          <h6 class="pre-heading sans-font">
-            Developer
-          </h6>
-          <h4 class="project-title">Quill Engage</h4>
-          <p class="project-description">
-            Quill Engage is a service which provides website performance
-            reports based on Google Analytics data. After initial beta
-            success, I was brought on board as a the project's front end
-            engineer to build out a complete overhaul using Angular.
+          <p class="about-blurb column-content">
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            famesac turpis egestas. Nullam eget ex sem. Aliquam nec laoreet
+            vitae. In posuere neque metus, a dapibus arcu vitae eu. Mauris
+            scelerisque, justo vestibulum sagittis venenatis.
           </p>
-          <div class="project-details">
-            Spring - Summer 2015 | Live
-          </div>
-          <a href="#" class="button">
-            View case study
-          </a>
-        </div>
-      </div>
-      <div class="section-column column-second">
-        <img src="./images/quill-engage.png" class="project-image" />
-        <div class="project-image-container hide-md">
-          <img src="./images/bg2.jpg" class="project-image-bg" />
-          <img src="./images/quill-engage.png" class="project-image-abs right" />
-        </div>
-      </div>
-    </div>
-    <div class="container project-container">
-      <div class="section-column column-first">
-        <img src="./images/qlik.png" class="project-image" />
-        <div class="project-image-container hide-md">
-          <img src="./images/bg3.jpg" class="project-image-bg" />
-          <img src="./images/qlik.png" class="project-image-abs left" />
-        </div>
-      </div>
-      <div class="section-column column-second">
-        <div class="column-content">
-          <h6 class="pre-heading sans-font">
-            Designer &amp; Developer
-          </h6>
-          <h4 class="project-title">Narratives for Qlik</h4>
-          <p class="project-description">
-            Narratives for Qlik is a third-party extension for Qlik Sense which
-            communicates insights from visualizations. I had the opportunity to
-            both redesign and implement user flows for configuring and
-            customizing these insights.
-          </p>
-          <div class="project-details">
-            Summer 2016 - Spring 2017 | Live
-          </div>
-          <a href="#" class="button">
-            View case study
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="site-section" id="experience">
-    <div class="container heading-container">
-      <div class="section-column column-first">
-        <h2>Experience</h2>
-      </div>
-      <div class="section-column column-second hide-md">
-        <a href="./assets/Andrew-Adams-Resume.pdf" class="button experience-button">
-          View resume <span class="unbold">(.pdf)</span>
-        </a>
-      </div>
-    </div>
-    <div class="container">
-      <div class="section-column column-first">
-        <h4 class="experience-company">Narrative Science</h4>
-        <div class="experience-info-container">
-          <div class="experience-info">
-            <div class="experience-title">
-              Product Designer
-            </div>
-            <div class="experience-details">
-              <span>Seattle, WA</span>
-              <span class="experience-spacer hide-md">|</span>
-              <span>2018 - Present</span>
-            </div>
-          </div>
-          <div class="experience-info">
-            <div class="experience-title">
-              Software Engineer
-            </div>
-            <div class="experience-details">
-              <span>Chicago, IL</span>
-              <span class="experience-spacer hide-md">|</span>
-              <span>2014 - 2017</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-column column-second">
-        <div class="column-content experience-blurb">
-          <h6 class="pre-heading sans-font">
-            At a glance
-          </h6>
-          <p>
-            In my four years at Narrative Science I've assumed roles ranging
-            from interaction designer to front end specialist.
-            I've taken products all the way from ideation to MVP while
-            contributing to both creative and practical processes.
+          <p class="about-blurb column-content">
+            Etiam id ipsum erat. Aliquam id sapien aliquam, viverra nisi in,
+            rutrum erat. Nam lacinia eu magna vel rhoncus. Mauris vitae
+            interdum magna. Donec posuere nibh ut nisi tempor laoreet.
           </p>
         </div>
-        <div class="column-content show-md">
-          <a href="./assets/Andrew-Adams-Resume.pdf" class="button experience-button">
+        <div class="section-column column-second">
+          <div class="about-heading">
+            <h6 class="pre-heading sans-font" id="about-title">
+              About me
+            </h6>
+            <h2>Designer <span class="light-amp">&amp;</span></h2>
+            <h2>Developer</h2>
+          </div>
+          <img src="./images/about.jpg"
+              class="about-image hide-md"
+              alt="design studio">
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="site-section">
+      <div class="container heading-container">
+        <div class="section-column column-first">
+          <h2 id="projects-title">Projects</h2>
+        </div>
+      </div>
+      <div class="container project-container">
+        <div class="section-column column-first">
+          <img src="./images/narratives.jpg"
+              class="project-image"
+              alt="interactive stories login page"/>
+          <div class="project-image-container hide-md">
+            <img src="./images/bg1.jpg"
+                class="project-image-bg"
+                aria-hidden="true" />
+            <img src="./images/narratives.jpg"
+                class="project-image-abs left"
+                alt="interactive stories login page" />
+          </div>
+        </div>
+        <div class="section-column column-second">
+          <div class="column-content">
+            <h6 class="pre-heading sans-font">
+              Designer
+            </h6>
+            <h4 class="project-title">Interactive Stories</h4>
+            <p class="project-description">
+              As a product designer at Narrative Science, I get the chance to
+              work on groundbreaking projects with unique design challenges
+              every day. The goal of our current initiative is to provide
+              businesses with a self-service tool that uses data to
+              intelligently generate interactive stories at scale.
+            </p>
+            <div class="project-details">
+              Ongoing project | In development
+            </div>
+            <a href="#" class="button" role="button">
+              View case study
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container project-container col-reverse-md">
+        <div class="section-column column-first">
+          <div class="column-content">
+            <h6 class="pre-heading sans-font">
+              Developer
+            </h6>
+            <h4 class="project-title">Quill Engage</h4>
+            <p class="project-description">
+              Quill Engage is a service which provides website performance
+              reports based on Google Analytics data. After initial beta
+              success, I was brought on board as a the project's front end
+              engineer to build out a complete overhaul using Angular.
+            </p>
+            <div class="project-details">
+              Spring - Summer 2015 | Live
+            </div>
+            <a href="#" class="button" role="button">
+              View case study
+            </a>
+          </div>
+        </div>
+        <div class="section-column column-second">
+          <img src="./images/quill-engage.png"
+              class="project-image"
+              alt="quill engage app"/>
+          <div class="project-image-container hide-md">
+            <img src="./images/bg2.jpg"
+                class="project-image-bg"
+                aria-hidden="true" />
+            <img src="./images/quill-engage.png"
+                class="project-image-abs right"
+                alt="quill engage app"/>
+          </div>
+        </div>
+      </div>
+      <div class="container project-container">
+        <div class="section-column column-first">
+          <img src="./images/qlik.png"
+              class="project-image"
+              alt="narratives for qlik settings modal" />
+          <div class="project-image-container hide-md">
+            <img src="./images/bg3.jpg"
+                class="project-image-bg"
+                aria-hidden="true" />
+            <img src="./images/qlik.png"
+                class="project-image-abs left"
+                alt="narratives for qlik settings modal" />
+          </div>
+        </div>
+        <div class="section-column column-second">
+          <div class="column-content">
+            <h6 class="pre-heading sans-font">
+              Designer &amp; Developer
+            </h6>
+            <h4 class="project-title">Narratives for Qlik</h4>
+            <p class="project-description">
+              Narratives for Qlik is a third-party extension for Qlik Sense
+              which communicates insights from visualizations. I had the
+              opportunity to both redesign and implement user flows for
+              configuring and customizing these insights.
+            </p>
+            <div class="project-details">
+              Summer 2016 - Spring 2017 | Live
+            </div>
+            <a href="#" class="button" role="button">
+              View case study
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="site-section">
+      <div class="container heading-container">
+        <div class="section-column column-first">
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <div class="section-column column-second hide-md">
+          <a href="./assets/Andrew-Adams-Resume.pdf"
+              class="button experience-button"
+              role="button">
             View resume <span class="unbold">(.pdf)</span>
           </a>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="site-section" id="contact">
-    <div class="container">
-      <div class="section-column column-first">
-        <div class="contact-headline">
-          <h6 class="pre-heading sans-font">
-            Interested in working together?
-          </h6>
-          <h2>Let's get in touch</h2>
-          <p class="contact-blurb">
-            I am currently seeking design and development opportunities in the
-            greater Seattle area. If you'd like to connect, drop me a line at
-            <a href="mailto:andrewjadams3@gmail.com">andrewjadams3@gmail.com</a>.
-          </p>
+      <div class="container">
+        <div class="section-column column-first">
+          <h4 class="experience-company">Narrative Science</h4>
+          <div class="experience-info-container">
+            <div class="experience-info">
+              <div class="experience-title">
+                Product Designer
+              </div>
+              <div class="experience-details">
+                <span>Seattle, WA</span>
+                <span class="experience-spacer hide-md">|</span>
+                <span>2018 - Present</span>
+              </div>
+            </div>
+            <div class="experience-info">
+              <div class="experience-title">
+                Software Engineer
+              </div>
+              <div class="experience-details">
+                <span>Chicago, IL</span>
+                <span class="experience-spacer hide-md">|</span>
+                <span>2014 - 2017</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="mailto:andrewjadams3@gmail.com" class="button contact-button inverse">
-          Send an email
+        <div class="section-column column-second">
+          <div class="column-content experience-blurb">
+            <h6 class="pre-heading sans-font">
+              At a glance
+            </h6>
+            <p>
+              In my four years at Narrative Science I've assumed roles ranging
+              from interaction designer to front end specialist.
+              I've taken products all the way from ideation to MVP while
+              contributing to both creative and practical processes.
+            </p>
+          </div>
+          <div class="column-content show-md">
+            <a href="./assets/Andrew-Adams-Resume.pdf"
+                class="button experience-button"
+                role="button">
+              View resume <span class="unbold">(.pdf)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="site-section">
+      <div class="container">
+        <div class="section-column column-first">
+          <div class="contact-headline">
+            <h6 class="pre-heading sans-font">
+              Interested in working together?
+            </h6>
+            <h2 id="contact-title">Let's get in touch</h2>
+            <p class="contact-blurb">
+              I am currently seeking design and development opportunities in
+              the greater Seattle area. If you'd like to connect, drop me a
+              line at <a href="mailto:andrewjadams3@gmail.com">
+                andrewjadams3@gmail.com</a>.
+            </p>
+          </div>
+          <a href="mailto:andrewjadams3@gmail.com"
+              class="button contact-button inverse"
+              role="button">
+            Send an email
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="sans-font">
+    <div class="container footer-container">
+      <div class="footer-links left-links">
+        <a href="https://www.linkedin.com/in/andrewjadams3/">Linkedin</a>
+        <a href="https://instagram.com/andrewjadams3">Instagram</a>
+        <a href="https://soundcloud.com/mikesnatchers">Soundcloud</a>
+      </div>
+      <div class="footer-links right-links hide-sm">
+        <a href="https://github.com/andrewjadams3/andrewjadams3.github.io">
+          Made by Andrew Adams
         </a>
       </div>
     </div>
-    <footer class="sans-font">
-      <div class="container footer-container">
-        <div class="footer-links left-links">
-          <a href="https://www.linkedin.com/in/andrewjadams3/">Linkedin</a>
-          <a href="https://instagram.com/andrewjadams3">Instagram</a>
-          <a href="https://soundcloud.com/mikesnatchers">Soundcloud</a>
-        </div>
-        <div class="footer-links right-links hide-sm">
-          <a href="https://github.com/andrewjadams3/andrewjadams3.github.io">Made by Andrew Adams</a>
-        </div>
-      </div>
-    </footer>
-  </section>
+  </footer>
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+    /* Smooth scrolling */
+    function scrollToTarget(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
+    }
+    document.querySelectorAll('a[data-scroll="true"]').forEach(function(a) {
+      a.addEventListener('click', scrollToTarget);
     });
+    /* Menu toggle */
+    function toggleMenu(e) {
+      e.preventDefault();
+      var menu = document.getElementById('main-menu');
+      menu.classList.toggle('open');
+      if (this.getAttribute('aria-expanded') === 'true') {
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+    var toggle = document.getElementById('menu-toggle');
+    toggle.addEventListener('click', toggleMenu);
   });
-</script>
-<script>
-  function toggleMenu() {
-    var x = document.getElementById('topnav');
-    x.classList.toggle('open');
-  }
 </script>
 </html>
