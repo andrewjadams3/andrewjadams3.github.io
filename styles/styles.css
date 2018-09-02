@@ -118,6 +118,16 @@ a.button.inverse:focus {
   background: #1E8FE1;
 }
 
+a.button.disabled {
+  cursor: default;
+  color: #D2DAE2;
+}
+
+a.button.disabled:hover,
+a.button.disabled:focus {
+  border-color: #D2DAE2;
+}
+
 /* Containers */
 /* ------------------------------------------------------------------------- */
 
