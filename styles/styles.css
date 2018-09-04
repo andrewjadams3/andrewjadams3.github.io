@@ -109,13 +109,13 @@ a.button {
   padding: 16px 40px;
   background: none;
   cursor: pointer;
-  text-decoration: none;
   transition: all 0.3s;
 }
 
 a.button:hover,
 a.button:focus {
   border-color: #2F384B;
+  text-decoration: none;
 }
 
 a.button.inverse {
@@ -183,13 +183,13 @@ a.button.disabled:focus {
 .navbar a {
   font-size: 0.75em;
   color: #8C96A9;
-  text-decoration: none;
   transition: color 0.3s;
 }
 
 .navbar a:hover,
 .navbar a:focus {
   color: #1F2532;
+  text-decoration: none;
 }
 
 .navbar a {
@@ -233,13 +233,13 @@ a.button.disabled:focus {
 .intro-scroll a {
   font-size: 0.75em;
   color: #D2DAE2;
-  text-decoration: none;
   transition: color 0.3s;
 }
 
 .intro-scroll a:hover,
 .intro-scroll a:focus {
   color: #8C96A9;
+  text-decoration: none;
 }
 
 /* About */
@@ -426,13 +426,13 @@ footer a {
   padding: 10px;
   font-size: 0.75em;
   color: #8C96A9;
-  text-decoration: none;
   transition: color 0.3s;
 }
 
 footer a:hover,
 footer a:focus {
   color: #fff;
+  text-decoration: none;
 }
 
 footer a:first-of-type {
