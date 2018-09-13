@@ -1,0 +1,208 @@
+---
+permalink: /narratives-for-qlik/
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/assets/favicon.ico?v=2">
+  <title>Andrew Adams | Narratives for Qlik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/subpage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arima+Madurai:400,700%7CMerriweather+Sans:700%7CMerriweather:300">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50103556-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-50103556-1');
+  </script>
+</head>
+<body>
+  <header class="subpage-section subpage-header">
+    <div class="container">
+      <h1>Narratives for Qlik</h1>
+      <nav class="subpage-navbar sans-font"
+          id="main-menu"
+          role="navigation"
+          aria-label="Main menu">
+        <a href="/">Return to portfolio</a>
+      </nav>
+    </div>
+  </header>
+  <main role="main">
+    <section id="overview" class="subpage-section">
+      <div class="container">
+        <img src="/images/qlik.png"
+            class="subpage-image-main"
+            alt="narratives for qlik settings modal" />
+        <h6 class="pre-heading sans-font">
+          Overview
+        </h6>
+        <p>
+          In early 2016, a small team of engineers at Narrative Science launched
+          <a href="https://narrativescience.com/Partners/Business-Intelligence/Qlik-Sense">Narratives for Qlik</a>,
+          a third-party extension for
+          <a href="https://www.qlik.com/us/products/qlik-sense">Qlik Sense</a>
+          which automatically generated shareable, dynamic insights about
+          charts and data in plain english. This small idea exploded in
+          popularity, and soon thousands of users were generating and sharing
+          narratives within their organizations.
+        </p>
+        <p>
+          I was brought on board shortly after launch to not only improve the
+          existing UI, but to help expand this success to other business
+          intelligence (BI) tools. By closely examining and iterating on
+          feedback, we were able to increase user engagement with core features
+          by 127%. Over time, this allowed us to expand the product’s overall
+          capabilities in ways which addressed the needs of our expanding user
+          base.
+        </p>
+      </div>
+    </section>
+    <section id="case-study" class="subpage-section">
+      <div class="container">
+        <h6 class="pre-heading sans-font">
+          Case study
+        </h6>
+        <h3 class="subpage-heading">Understanding the users</h3>
+        <p>
+          While not much was known about our initial users, the original
+          engineering team had implemented event tracking using
+          <a href="https://mixpanel.com">Mixpanel</a> which logged most user
+          interactions. They had also built a basic feedback system which
+          allowed users to reach out with questions and feature requests.
+        </p>
+        <p>
+          By looking first at direct feedback, we learned the most common
+          complaint about the current functionality revolved around language
+          quality and depth. In short - users thought our insights
+          sounded clunky.
+        </p>
+        <img src="/images/qlik-dashboard.png"
+            class="subpage-image inline-image"
+            alt="qlik sense dashboard" />
+        <p>
+          Most clunky language could be solved by tweaking a few configuration
+          items which were already available to the user. However, by examining
+          the Mixpanel data, we discovered that most users never took advantage
+          of these settings, and those who did seemed to only adjust a small
+          subset.
+        </p>
+        <p>
+          By performing an internal UX audit the issue became apparent: our
+          narrative settings were not only difficult to find, but highly
+          confusing. Anyone unfamiliar with the extension could not articulate
+          how adjusting the majority of our settings would affect the insights.
+        </p>
+      </div>
+    </section>
+    <section id="ideation" class="subpage-section">
+      <div class="container">
+        <h3 class="subpage-heading">Ideation</h3>
+        <p>
+          I began by mapping out all configuration items and collaborating with
+          engineers to understand how they each work together. Often, adjusting
+          one piece of configuration would affect the ability to change others.
+          Using this information I was able to map a layout of independent
+          pieces and indicate the order in which they were required to be set.
+          I eventually landed on three sequential categories of configuration.
+        </p>
+        <img src="/images/qlik-ideas.jpg"
+            class="subpage-image inline-image"
+            alt="whiteboard diagram" />
+      </div>
+    </section>
+    <section id="wireframes" class="subpage-section">
+      <div class="container">
+        <h3 class="subpage-heading">Wireframes</h3>
+        <p>
+          Using these three categories, I came up with several iterations of
+          potential layouts and user flows. Because of the linear nature of the
+          configuration items, I was drawn to a dynamic wizard layout which
+          would walk the user through each necessary step while hiding anything
+          that was irrelevant down the line.
+        </p>
+        <img src="/images/qlik-wireframe.png"
+            class="subpage-image inline-image"
+            alt="narratives for qlik wireframe" />
+      </div>
+    </section>
+    <section id="testing" class="subpage-section">
+      <div class="container">
+        <h3 class="subpage-heading">Testing</h3>
+        <p>
+          I set up several user tests with internal employees as well as active
+          users to gather feedback on this approach. By comparing our current
+          layout to the new wizard, I determined that user understanding of the
+          configuration items in the wizard format was noticeably higher. This
+          resulted in narratives with more natural sounding language and
+          improved readability.
+        </p>
+        <p>
+          Using an iterative testing approach, I made adjustments to the
+          wireframes after each testing session. User feedback allowed me to
+          fine-tune the configuration item categories and ensured that each was
+          laid out in an understandable manner. The end result was a natural
+          flow through the wizard with the added affordance of quick navigation
+          for advanced users.
+        </p>
+      </div>
+    </section>
+    <section id="mockups" class="subpage-section">
+      <div class="container">
+        <h3 class="subpage-heading">Mockups</h3>
+        <p>
+          Because our extension existed as a component of a larger piece of
+          software, I strove to match the look and feel of Qlik Sense in order
+          to increase user trust and understanding. Using Sketch, I mocked up
+          how each narrative extension would be initialized, configured, and
+          ultimately consumed by the end user.
+        </p>
+        <img src="/images/qlik-mockup.png"
+            class="subpage-image inline-image"
+            alt="narratives for qlik mockup" />
+      </div>
+    </section>
+    <section id="mockups" class="subpage-section">
+      <div class="container">
+        <h3 class="subpage-heading">Outcome</h3>
+        <p>
+          Building upon the existing extension framework, I created an
+          automatic, opt-out settings modal using AngularJS. Mimicking the
+          functionality found in native Qlik Sense visualizations, the end
+          result was an extension which felt native, familiar, and simple to
+          use.
+        </p>
+        <img src="/images/qlik-modal.gif"
+            class="subpage-image inline-image"
+            alt="narratives for qlik interactive modal" />
+        <p>
+          A month after launch, we consulted our Mixpanel data and found an
+          increase in overall engagement with the narrative settings of 127%.
+          Users were not only finding the settings, but using them as intended
+          to actively improve their narratives.
+        </p>
+        <p>
+          Because of the success of the product and subsequent UX overhaul we
+          were able to expand our learnings to several other BI platforms.
+          Moving forward I led both the design and development of two
+          additional BI extensions:
+          <a href="https://narrativescience.com/Partners/Business-Intelligence/Tableau">Narratives for Tableau</a>
+          and
+          <a href="https://narrativescience.com/Partners/Business-Intelligence/SAP-BusinessObjects-Lumira">Narratives for Lumira</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer class="subpage-footer subpage-section sans-font">
+    <div class="container">
+      <div class="subpage-navbar sans-font">
+        <a href="/">Return to portfolio</a>
+      </div>
+    </div>
+  </footer>
+</body>

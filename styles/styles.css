@@ -604,6 +604,11 @@ a.button.disabled:focus {
     font-weight: 700;
   }
 
+  h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
   .pre-heading {
     font-size: 0.875em;
   }

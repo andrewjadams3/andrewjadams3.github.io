@@ -2,7 +2,7 @@
 /* ------------------------------------------------------------------------- */
 
 .subpage-section {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 
 .subpage-section .container {
@@ -14,24 +14,24 @@
 
 .subpage-section p,
 .subpage-section ol {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 
 /* Header */
 /* ------------------------------------------------------------------------- */
 
-#subpage-header {
+.subpage-header {
   padding: 50px 0;
   margin: 0;
 }
 
-#subpage-header .container {
+.subpage-header .container {
   text-align: center;
   align-items: center;
 }
 
-#subpage-header h1 {
+.subpage-header h1 {
   font-size: 2.5em;
 }
 
@@ -86,17 +86,14 @@
 /* Main */
 /* ------------------------------------------------------------------------- */
 
-.subpage-image-main {
-  width: 100%;
-  max-width: 350px;
-  margin: 0 auto 75px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12);
-}
-
 .disclaimer {
   font-size: 0.875em;
   font-style: italic;
   color: #8C96A9;
+}
+
+.subpage-heading {
+  margin-bottom: 10px;
 }
 
 .content-list {
@@ -105,16 +102,38 @@
   line-height: 2em;
 }
 
-.subpage-image {
-  width: 100%;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12);
-  margin-bottom: 30px;
-}
-
 #overview {
   margin-top: 0;
 }
 
 #examples .disclaimer {
   margin-bottom: 15px;
+}
+
+/* Images */
+/* ------------------------------------------------------------------------- */
+
+.subpage-image-main {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 75px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12);
+}
+
+.subpage-image {
+  width: 100%;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12);
+  margin-bottom: 30px;
+}
+
+.inline-image {
+  margin: 20px 0 40px;
+}
+
+/* Small Screen */
+@media only screen and (max-width: 500px)  {
+  .subpage-section h1 {
+    font-size: 2em;
+    font-weight: 400;
+  }
 }
