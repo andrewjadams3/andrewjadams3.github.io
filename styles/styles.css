@@ -364,7 +364,7 @@ a.button.disabled:focus {
 }
 
 .experience-blurb {
-  width: auto;
+  width: 450px;
 }
 
 /* Contact */
@@ -553,6 +553,7 @@ a.button.disabled:focus {
   }
 
   .experience-blurb {
+    width: auto;
     margin-bottom: 50px;
   }
 
