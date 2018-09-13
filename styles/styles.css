@@ -416,30 +416,30 @@ a.button.disabled:focus {
 /* Footer */
 /* ------------------------------------------------------------------------- */
 
-footer {
+.main-footer {
   padding: 30px 0;
   border-top: 1px solid #2F384B;
   background-color: #1F2532;
 }
 
-footer a {
+.main-footer a {
   padding: 10px;
   font-size: 0.75em;
   color: #8C96A9;
   transition: color 0.3s;
 }
 
-footer a:hover,
-footer a:focus {
+.main-footer a:hover,
+.main-footer a:focus {
   color: #fff;
   text-decoration: none;
 }
 
-footer a:first-of-type {
+.main-footer a:first-of-type {
   padding-left: 0;
 }
 
-footer a:last-of-type {
+.main-footer a:last-of-type {
   padding-right: 0;
 }
 
@@ -667,13 +667,13 @@ footer a:last-of-type {
   /* Footer */
   /* ------------------------- */
 
-  footer {
+  .main-footer {
     text-align: center;
   }
 
-  footer a,
-  footer a:first-of-type,
-  footer a:last-of-type {
+  .main-footer a,
+  .main-footer a:first-of-type,
+  .main-footer a:last-of-type {
     padding: 15px;
   }
 
